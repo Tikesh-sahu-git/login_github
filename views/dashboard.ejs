@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="bg-gray-800 p-10 rounded-2xl shadow-lg max-w-md text-center">
+      <img
+        src="<%= user.photos && user.photos[0] ? user.photos[0].value : 'https://avatars.githubusercontent.com/u/9919?s=200&v=4' %>"
+        alt="Profile"
+        class="w-24 h-24 rounded-full mx-auto mb-6 border-4 border-gray-700"
+      />
+      <h1 class="text-2xl font-bold mb-2">Hello, <%= user.username %>!</h1>
+      <p class="mb-6 text-gray-400"><%= user.displayName || user.username %></p>
+      <a
+        href="/logout"
+        class="inline-block bg-red-600 hover:bg-red-500 px-6 py-3 rounded-xl text-lg font-semibold transition"
+      >
+        Logout
+      </a>
+    </div>
+  </body>
+</html>
